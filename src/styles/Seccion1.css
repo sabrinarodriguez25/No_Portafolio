@@ -1,0 +1,143 @@
+
+body {
+    background-color: black; /* Fondo negro para toda la página */
+}
+
+.image-wrapper {
+    position: relative; /* Asegura que los títulos estén posicionados correctamente */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    width: 100%; /* Hace que ocupe todo el ancho disponible */
+    max-width: 600px; /* Puedes ajustar el tamaño máximo según lo que desees */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* Estilo para la imagen dentro del image-wrapper */
+.image-wrapper img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 10px; /* Redondea las esquinas */
+    animation: bounce 1s ease-out; /* Aplicando la animación de rebote a la imagen */
+}
+
+/* Contenedor principal para manejar la estructura de las imágenes y texto */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Aumentado para dar más espacio entre secciones */
+    margin: 20px; /* Agrega espacio exterior */
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    position: relative; /* Para colocar el texto encima de la imagen */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+/* Animación de rebote para la imagen (solo al cargar) */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-15px); /* Subir un poco */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a la posición inicial */
+    }
+}
+
+.image-container img {
+    width: 500px; /* Ajusta el tamaño de la imagen */
+    animation: bounce 1s ease-out; /* Rebotar solo una vez al cargar */
+    border-radius: 10px; /* Redondea las esquinas de la imagen */
+}
+
+/* Estilo para los nombres */
+.image-title {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto */
+    opacity: 0; /* Inicialmente invisibles */
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* Asegura que el elemento quede en su posición final después de la animación */
+}
+
+/* Animación para Annabel, deslizándose desde la izquierda */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(-100%); /* Comienza fuera de la pantalla (a la izquierda) */
+    }
+    100% {
+        opacity: 1; /* Se hace visible */
+        transform: translateX(0); /* Llega a su posición final */
+    }
+}
+
+.image-title-annabel {
+    top: 10%; /* Posición superior cerca del borde de la imagen */
+    left: 5%; /* Posición en el lado izquierdo */
+    font-family: 'Arial', sans-serif; /* Estilo de fuente para Annabel */
+    color: #ff6347; /* Color brillante para Annabel */
+    animation-name: slideFromLeft; /* Aparece deslizándose desde la izquierda */
+    animation-delay: 0.5s; /* Añadido un retraso para el primer título */
+}
+
+/* Animación para Lucinda, deslizándose desde la derecha */
+@keyframes slideFromRight {
+    0% {
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(100%); /* Comienza fuera de la pantalla (a la derecha) */
+    }
+    100% {
+        opacity: 1; /* Se hace visible */
+        transform: translateX(0); /* Llega a su posición final */
+    }
+}
+
+.image-title-lucinda {
+    top: 10%; /* Posición superior cerca del borde de la imagen */
+    right: 5%; /* Posición en el lado derecho */
+    font-family: 'Georgia', serif; /* Estilo de fuente para Lucinda */
+    color: #4caf50; /* Color brillante para Lucinda */
+    animation-name: slideFromRight; /* Aparece deslizándose desde la derecha */
+    animation-delay: 0.5s; /* Añadido un retraso para el segundo título */
+}
+
+/* Contenedor para la nueva sección con la imagen y la descripción */
+.image-description-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 60px; /* Incrementa para más espacio */
+    z-index: 0; /* Asegura que esté por debajo de otros elementos */
+}
+
+
+.image-annabel2 {
+    width: 100px; /* Ajusta el tamaño de la segunda imagen */
+    border-radius: 10px;
+}
+
+.description {
+    max-width: 400px; /* Limita el tamaño de la descripción */
+}
+
+.description h2 {
+    font-size: 1.5rem;
+    color: #ff6347;
+}
+
+.description p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+}
